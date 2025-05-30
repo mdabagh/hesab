@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>آتیه اندیش محاسب نگر</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f5f7fa; /* خاکستری ملایم */
+    }
+    section {
+      min-height: 100vh;
+      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0a2e59, #3b5998); /* آبی نفتی ملایم */
+      color: #fefcf9; /* سفید شکری */
+      text-align: center;
+      width: 100%;
+      height: 100vh;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-bottom: 4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .scroll-down {
+      color: #fefcf9;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1.2rem;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      animation: bounce 2s infinite;
+    }
+    .scroll-down i {
+      display: block;
+      font-size: 2rem;
+      margin-top: 0.2rem;
+    }
+    @keyframes bounce {
+      0%, 100% {transform: translate(-50%, 0);}
+      50% {transform: translate(-50%, 10px);}
+    }
+
+    /* بخش های خدمات، محصولات، تماس با ما */
+    #services, #products, #contact {
+         border-radius: 16px;
+    margin: 1rem auto;
+    max-width: 1200px;
+    width: 95%;
+    flex-direction: column;
+    align-items: flex-start;
+    }
+    #services h2, #products h2, #contact h2 {
+      color: #0a2e59;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      align-self: center;
+      width: 100%;
+      text-align: center;
+    }
+    #services p, #products p {
+      color: #333;
+      font-size: 1.15rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    /* کارت‌ها */
+    .card-modern {
+      background: #fefcf9;
+      border: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .card-modern:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+    }
+    .card-icon {
+      font-size: 3rem;
+      color: #3b5998; /* آبی نفتی ملایم */
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .card-modern h5 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #0a2e59;
+    }
+    .card-modern p {
+      color: #555;
+      font-size: 1rem;
+      flex-grow: 1;
+      text-align: center;
+    }
+    .btn-primary {
+      background-color: #3b5998;
+      border: none;
+      font-weight: 600;
+      padding: 0.6rem 1.6rem;
+      align-self: center;
+      margin-top: 1.8rem;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+    }
+    .btn-primary:hover {
+      background-color: #0a2e59;
+    }
+    .row.g-4 > .col-md-4 {
+      display: flex;
+    }
+
+    /* فرم تماس */
+    form label {
+      font-weight: 600;
+      color: #0a2e59;
+    }
+    form input, form select, form textarea {
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-family: 'Vazirmatn', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: #3b5998;
+      box-shadow: 0 0 8px rgba(59,89,152,0.3);
+    }
+    form textarea {
+      resize: vertical;
+    }
+    form button.btn-primary {
+      width: 100%;
+      max-width: 250px;
+      margin: 2rem auto 0;
+      display: block;
+    }
+
+    /* فوتر */
+    footer {
+      background-color: #0a2e59;
+      color: #fefcf9;
+      padding: 4rem 1rem 2rem;
+    }
+    footer h6 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #fefcf9;
+    }
+    footer p, footer a {
+      font-size: 0.95rem;
+      color: #d0d7e5;
+    }
+    footer a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #ffffff;
+    }
+    footer .container > .row > div {
+      margin-bottom: 2rem;
+    }
+    footer .border-top {
+      border-color: #4a5e8b;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #a2a9b8;
+      text-align: center;
+    }
+
+    /* ریسپانسیو */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+      }
+      #services, #products, #contact {
+        padding: 2rem 1rem;
+      }
+      .card-modern h5 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- منو -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">محاسب نگر</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="تغییر منو">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">درباره</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">محصولات</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">تماس با ما</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- شعار -->
+<header class="hero section d-flex" id="about">
+  <div class="container">
+    <h1>راه‌حل‌های حرفه‌ای برای حسابداری و فناوری شما</h1>
+    <p>ما در آتیه اندیش محاسب نگر، خدمات مالی، نرم‌افزاری، و سرمایه‌گذاری را با رویکردی نوین ارائه می‌دهیم</p>
+    <div class="scroll-down" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+      بخش خدمات
+      <i class="bi bi-chevron-double-down"></i>
+    </div>
+  </div>
+</header>
+
+<!-- خدمات -->
+<section id="services" class="section">
+  <h2 data-aos="fade-up">خدمات ما</h2>
+  <p data-aos="fade-up" data-aos-delay="100">تیم متخصص ما در زمینه‌های مختلف مالی و فناوری اطلاعات آماده خدمت‌رسانی به شماست</p>
+  <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="col-md-4">
+      <div class="card-modern">
+        <div class="card-icon"><i class="bi bi-calculator"></i></div>
+        <h5>حسابداری مالی</h5>
+        <p>ارائه خدمات دقیق حسابداری با نرم‌افزارهای بروز و استانداردهای بین‌المللی</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-modern">
+        <div class="card-icon"><i class="bi bi-code-slash"></i></div>
+        <h5>نرم‌افزار سفارشی</h5>
+        <p>طراحی و توسعه نرم‌افزارهای اختصاصی متناسب با نیازهای کسب‌وکار شما</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-modern">
+        <div class="card-icon"><i class="bi bi-bar-chart-line"></i></div>
+        <h5>مشاوره سرمایه‌گذاری</h5>
+        <p>راهنمایی تخصصی در زمینه سرمایه‌گذاری‌های هوشمند و مدیریت ریسک</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- محصولات -->
+<section id="products" class="section">
+  <h2 data-aos="fade-up">محصولات ما</h2>
+  <p data-aos="fade-up" data-aos-delay="100">محصولاتی که به کسب‌وکار شما قدرت می‌بخشند و مدیریت را ساده‌تر می‌کنند.</p>
+  <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="col-md-4">
+      <div class="card-modern">
+        <div class="card-icon"><i class="bi bi-person-badge"></i></div>
+        <h5>نرم‌افزار حقوق و دستمزد اندیش</h5>
+        <p>مدیریت هوشمند حقوق و مزایای کارکنان با رابط کاربری ساده و گزارش‌های دقیق</p>
+        <a href="#contact" class="btn btn-primary">ورود و مشاهده دمو</a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card-modern">
+        <div class="card-icon"><i class="bi bi-journal-text"></i></div>
+        <h5>منوی دیجیتال رستوران و کافه رسپینی</h5>
+        <p>صفحه‌ای برای داستان شما، ابزار مدیریت منو و تحلیل بازخورد کافه‌ها و رستوران‌ها</p>
+        <a href="https://respiny.ir" target="_blank" class="btn btn-primary">ورود و مشاهده دمو</a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card-modern">
+        <div class="card-icon"><i class="bi bi-gear-wide-connected"></i></div>
+        <h5>پیاده‌سازی نرم‌افزار سفارشی شما</h5>
+        <p>راهکاری منحصربه‌فرد برای تحقق نیازهای خاص کسب‌وکار شما با کیفیت و سرعت بالا</p>
+        <a href="#contact" class="btn btn-primary">سفارش دهید</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- تماس با ما -->
+<section id="contact" class="section">
+  <h2 data-aos="fade-up">تماس با ما</h2>
+  <form data-aos="fade-up" data-aos-delay="100" class="mx-auto w-75">
+    <div class="mb-3">
+      <label for="name" class="form-label">نام و نام خانوادگی</label>
+      <input type="text" id="name" class="form-control" placeholder="نام شما" required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">ایمیل</label>
+      <input type="email" id="email" class="form-control" placeholder="ایمیل شما" required />
+    </div>
+    <div class="mb-3">
+      <label for="subject" class="form-label">موضوع</label>
+      <select id="subject" class="form-select" required>
+        <option value="">انتخاب موضوع</option>
+        <option value="service">خدمات</option>
+        <option value="product">محصولات</option>
+        <option value="support">پشتیبانی</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">پیام شما</label>
+      <textarea id="message" rows="5" class="form-control" placeholder="متن پیام" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">ارسال پیام</button>
+  </form>
+</section>
+
+<!-- فوتر -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>درباره ما</h6>
+        <p>آتیه اندیش محاسب نگر ارائه‌دهنده خدمات مالی و نرم‌افزاری با تمرکز بر کیفیت و نوآوری</p>
+      </div>
+      <div class="col-md-4">
+        <h6>ارتباط با ما</h6>
+        <p>تهران، خیابان انقلاب، پلاک ۱۲۳</p>
+        <p>تلفن: 021-12345678</p>
+        <p>ایمیل: info@atmashn.com</p>
+      </div>
+      <div class="col-md-4">
+        <h6>دنبال کنید</h6>
+        <p><a href="#" target="_blank">اینستاگرام</a></p>
+        <p><a href="#" target="_blank">لینکدین</a></p>
+        <p><a href="#" target="_blank">تلگرام</a></p>
+      </div>
+    </div>
+    <div class="border-top mt-4 pt-3">
+      © 2025 تمامی حقوق محفوظ است - آتیه اندیش محاسب نگر
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
